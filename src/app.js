@@ -5,6 +5,8 @@ const geoCode = require(`./utills/geocode.js`)
 const forecast = require(`./utills/forecast.js`)
 
 const app = express()
+const port = process.env.PORT || 4200
+
 const publicDiractoryPath = path.join(__dirname,`../public`)
 const viewPath = path.join(__dirname,`../templates/views`)
 const partialPath = path.join(__dirname,`../templates/partials`)
@@ -90,6 +92,6 @@ app.get(`*` , (req,res) => {
     })
 })
 
-app.listen(4200,() => {
+app.listen(port,() => {
     console.log(`App is running on port 4200`)
 })
